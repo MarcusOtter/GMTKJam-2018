@@ -23,6 +23,7 @@ namespace Scripts
 
         private void Update()
         {
+            if (_mainCam == null) _mainCam = Camera.main;
             if (Input.GetKeyDown(_attackButton)) AttackButtonDown?.Invoke(this, EventArgs.Empty);
 
             if (Input.mouseScrollDelta != Vector2.zero) OnScrollWheelChange?.Invoke(this, Input.mouseScrollDelta);
